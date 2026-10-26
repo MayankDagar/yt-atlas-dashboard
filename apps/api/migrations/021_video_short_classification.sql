@@ -1,0 +1,2 @@
+ALTER TABLE video_engagement_snapshots
+  ADD COLUMN IF NOT EXISTS is_short BOOLEAN NOT NULL DEFAULT FALSE;

@@ -1,0 +1,11 @@
+ALTER TABLE channels
+  ADD COLUMN IF NOT EXISTS youtube_title TEXT,
+  ADD COLUMN IF NOT EXISTS description TEXT,
+  ADD COLUMN IF NOT EXISTS channel_published_at TIMESTAMPTZ,
+  ADD COLUMN IF NOT EXISTS subscriber_count BIGINT,
+  ADD COLUMN IF NOT EXISTS subscribers_hidden BOOLEAN NOT NULL DEFAULT FALSE,
+  ADD COLUMN IF NOT EXISTS youtube_video_count BIGINT,
+  ADD COLUMN IF NOT EXISTS profile_observed_at TIMESTAMPTZ;
+
+ALTER TABLE video_engagement_snapshots
+  ADD COLUMN IF NOT EXISTS views_count BIGINT;
